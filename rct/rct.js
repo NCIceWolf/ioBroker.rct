@@ -65,9 +65,11 @@ rct.process = function (host, rctElements, iobInstance) {
 
 	__client = net.createConnection({ host, port: 8899 }, () => {
 
+		__refreshTimeout = setInterval(requestElements, (1000 * iobInstance.config.rct_refresh));
+		
 		function requestElements() {
 			//Test ob refresh ordnungsgemäß funktioniert.
-			//iobInstance.log.info('request Elements');
+			iobInstance.log.info('request Elements');
 
 			if (!__client) {
 				return;
@@ -77,14 +79,14 @@ rct.process = function (host, rctElements, iobInstance) {
 					__client.write(getFrame(rct.const.command_byte_read, rct['cmd'][e].id));
 				}
 			});
-			__refreshTimeout = setTimeout(requestElements, (1000 * iobInstance.config.rct_refresh) || 15000);
+			//__refreshTimeout = setTimeout(requestElements, (1000 * iobInstance.config.rct_refresh) || 15000);
 		}
 
 		iobInstance.log.info(`RCT: connected to server at ${host}`);
 		iobInstance.setState('info.connection',true,true);
 		// eslint-disable-next-line no-undef
 		connectionStatus = true;
-		requestElements();
+		//requestElements();
 	});
 
 
