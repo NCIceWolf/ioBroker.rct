@@ -56,8 +56,8 @@ rct.getStateInfo = function (rctName, iobInstance) {
 rct.reconnect = function (host, iobInstance) {
 	if (__client) {
 		try {
+			if (DEBUG_CONSOLE) iobInstance.log.info(`RCT: starting termination of interval connection to server at ${host}`);
 			__client.end();
-			//iobInstance.log.info(`RCT: disconnecting from server`);
 		} catch (err) {
 			iobInstance.log.error(`RCT: reconnection not working!`);
 			__client.destroy();
