@@ -1,10 +1,8 @@
 {
-    "i18n": false,
     "type": "tabs",
     "tabsStyle": {
         "width": "calc(100% - 100px)"
     },
-    "iconPosition": "top",
     "items": {
         "_general": {
             "type": "panel",
