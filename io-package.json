@@ -145,10 +145,8 @@
     "connectionType": "local",
     "dataSource": "poll",
     "adminUI": {
+      "singleton": true,
       "config": "json"
-    },
-    "adminTab": {
-      "singleton": true
     },
     "dependencies": [
       {
