@@ -1,5 +1,5 @@
-/*
 {
+	/*
 	"cli": true,
 	"adapterName": "rct",
 	"title": "RCT PV",
@@ -37,5 +37,5 @@
 	"ci": "gh-actions",
 	"dependabot": "no",
 	"creatorVersion": "1.33.0"
+	*/
 }
-*/
