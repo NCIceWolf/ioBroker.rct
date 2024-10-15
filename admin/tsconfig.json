@@ -4,6 +4,6 @@
 		"./admin.d.ts",
 		"./**/*.js",
 		// include the adapter-config definition if it exists
-		"../lib/adapter-config.d.ts",
+		"../lib/adapter-config.d.ts"
 	]
 }
