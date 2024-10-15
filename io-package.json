@@ -149,10 +149,11 @@
       "singleton": true
     },
     "adminTab": {
-    "singleton": true,
-    "name": {
+      "singleton": true,
+      "name": {
         "en": "RCT adapter",
         "de": "RCT Adapter"
+      },
     },
     "dependencies": [
       {
