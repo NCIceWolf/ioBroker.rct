@@ -53,13 +53,9 @@
     "admin/",
     "lib/",
     "rct/",
-    "iob_npm.done",
     "io-package.json",
     "LICENSE",
-    "main.js",
-    "main.test.js",
-    "package.json",
-    "README.md"
+    "main.js"
   ],
   "scripts": {
     "translate": "translate-adapter",
