@@ -8,6 +8,7 @@
 		// check JS files
 		"allowJs": true,
 		"checkJs": true,
+	
 		"module": "commonjs",
 		"moduleResolution": "node",
 		"esModuleInterop": true,
@@ -23,6 +24,7 @@
 		"noImplicitAny": false,
 		// "noUnusedLocals": true,
 		// "noUnusedParameters": true,
+		"useUnknownInCatchVariables": false,
 
 		// Consider targetting es2019 or higher if you only support Node.js 12+
 		"target": "es2022",
