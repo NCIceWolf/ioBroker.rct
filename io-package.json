@@ -133,7 +133,7 @@
       "license": "MIT"
     },
     "platform": "Javascript/Node.js",
-    "icon": "admin/rct-logo.square.png",
+    "icon": "rct-logo.square.png",
     "enabled": false,
     "extIcon": "https://raw.githubusercontent.com/aruttkamp/ioBroker.rct/main/admin/rct-logo.square.png",
     "readme": "https://github.com/aruttkamp/ioBroker.rct/blob/main/README.md",
@@ -145,8 +145,7 @@
     "connectionType": "local",
     "dataSource": "poll",
     "adminUI": {
-      "config": "json",
-      "singleton": true
+      "config": "json"
     },
     "adminTab": {
       "singleton": true
