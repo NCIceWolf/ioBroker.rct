@@ -134,7 +134,7 @@
     },
     "platform": "Javascript/Node.js",
     "icon": "rct-logo.square.png",
-    "enabled": true,
+    "enabled": false,
     "extIcon": "https://raw.githubusercontent.com/aruttkamp/ioBroker.rct/main/admin/rct-logo.square.png",
     "readme": "https://github.com/aruttkamp/ioBroker.rct/blob/main/README.md",
     "loglevel": "info",
