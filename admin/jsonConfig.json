@@ -20,6 +20,12 @@
                     "lg": 12,
                     "text": "General Settings"
                  },
+                "dividerHdr": {
+                    "newLine": true,
+                    "type": "header",
+                    "text": "DIVIDER",
+                    "size": 2
+                },
                 "rct_ip": {
                     "newLine": true,
                     "type": "text",
