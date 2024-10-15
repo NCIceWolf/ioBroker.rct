@@ -14,6 +14,7 @@
                     "newLine": true,
                     "type": "header",
                     "size": 1,
+                    "xs": 12,
                     "sm": 12,
                     "md": 12,
                     "lg": 12,
@@ -22,6 +23,7 @@
                 "rct_ip": {
                     "newLine": true,
                     "type": "text",
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
                     "lg": 6,
@@ -32,6 +34,7 @@
                     "type": "number",
                     "min": 10,
                     "max": 3600,
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
                     "lg": 6,
@@ -41,6 +44,7 @@
               "rct_elements": {
                     "newLine": true,
                     "type": "text",
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
                     "lg": 12,
