@@ -41,7 +41,7 @@ rct.const = {
 	command_byte_reserved: '04 ',
 	command_byte_response: '05 ',
 	command_byte_longresponse: '06 ',
-	command_byte_extension: '3C'
+	command_byte_extension: '3C',
 };
 
 rct.inverter_state = {
@@ -58,7 +58,7 @@ rct.inverter_state = {
 	10: 'Prepare Bat passive',
 	11: 'Battery passice (off-grid)',
 	12: 'Hardwaretest',
-	13: 'Einspeisung'
+	13: 'Einspeisung',
 };
 
 rct.battery_state = {
@@ -68,7 +68,7 @@ rct.battery_state = {
 	5: 'Start ?',
 	8: 'calibrating - charging phase (0% --> 100%)',
 	1024: 'calibrating - discharge phase (xx% --> 0%)',
-	2048: 'balancing'
+	2048: 'balancing',
 };
 
 rct.cmd = {};
