@@ -6,7 +6,7 @@
     },
     "iconPosition": "top",
     "items": {
-        "_general": {
+        "generalTab": {
             "type": "panel",
             "label": "General settings",
             "items": {
@@ -60,6 +60,24 @@
                     "xl": 4,
                     "label": "Elements",
                     "help": "Elements to be fetched from inverter (leave blank for standard)"
+                }
+            }
+        },
+        "writableTab": {
+            "type": "panel",
+            "label": "Settings for writing elements",
+            "items": {
+                "writesupport": {
+                    "newLine": true,
+                    "type": "checkbox",
+                    "size": 1,
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 4,
+                    "xl": 4,
+                    "label": "Enable Writesupport",
+                    "tooltip": "Defines whether adapter should be allowed to write data to the RCT inverter. Enable only if needed!!"
                 }
             }
         }
