@@ -89,7 +89,8 @@ class Rct extends utils.Adapter {
 					});
 				} else iobInstance.log.info('rct state not defined: ' + e);
 			}
-		} catch (err) {
+		}
+		catch(err) {
 			this.log.error('Error during state creation / cancelling initialization');
 		}
 
@@ -111,7 +112,8 @@ class Rct extends utils.Adapter {
 			rct.end(this.config.rct_ip, this);
 			this.setState('info.connection',false,true);
 			callback();
-		} catch (e) {
+		}
+		catch(err) {
 			callback();
 		}
 	}
