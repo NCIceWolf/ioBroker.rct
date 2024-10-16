@@ -1,5 +1,5 @@
-/*global systemDictionary:true */
+/*global systemDictionary:true
 'use strict';
 
 systemDictionary = {
-};
+};*/
