@@ -50,8 +50,7 @@
   },
   "main": "main.js",
   "files": [
-    "admin{,/!(src)/**}/!(tsconfig|tsconfig.*|.eslintrc).{json,json5}",
-    "admin{,/!(src)/**}/*.{html,css,png,svg,jpg,js}",
+    "admin/",
     "lib/",
     "rct/",
     "iob_npm.done",
