@@ -149,14 +149,10 @@
     },
     "dependencies": [
       {
-        "js-controller": ">=6.0.0"
+        "js-controller": ">=6.0.0",
+        "admin"
       }
     ],
-    "globalDependencies": [
-      {
-        "admin": ">=7.0.0"
-      }
-    ]
   },
   "native": {
     "rct_ip": "",
