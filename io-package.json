@@ -141,6 +141,8 @@
     "tier": 2,
     "mode": "daemon",
     "messagebox": true,
+    "subscribe": "messagebox",
+    "eraseOnUpload": true,
     "type": "energy",
     "compact": true,
     "connectionType": "local",
