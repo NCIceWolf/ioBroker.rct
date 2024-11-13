@@ -62,6 +62,40 @@
                     "help": "Elements to be fetched from inverter (leave blank for standard)"
                 }
             }
+        },
+        "_write": {
+            "type": "panel",
+            "label": "Write settings",
+            "items": {
+                "_Headline1": {
+                    "newLine": true,
+                    "type": "header",
+                    "size": 1,
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12,
+                    "text": "Settings for write access to RCT inverter"
+                     },
+                    "dividerHdr": {
+                        "newLine": true,
+                        "type": "header",
+                        "text": "DIVIDER",
+                        "size": 2
+                    },
+                    "write_support": {
+                        "newLine": true,
+                        "type": "checkbox",
+                        "xs": 12,
+                        "sm": 12,
+                        "md": 6,
+                        "lg": 4,
+                        "xl": 4,
+                        "label": "Use write-support towards RCT inverter. Use at own risk!!",
+                        "help": "This enables the write support to the RCT inverter. Please check help pages for further infos."
+                    }
+            }
         }
     }
 }
