@@ -50,9 +50,8 @@
   },
   "main": "main.js",
   "files": [
-    "admin{,/!(src)/**}/!(tsconfig|tsconfig.*).json",
-    "admin{,/!(src)/**}/*.{html,css,png,svg,jpg,js}",
-    "lib/**/*.js",
+    "admin/",
+    "lib/",
     "rct/",
     "iob_npm.done",
     "io-package.json",
@@ -70,6 +69,13 @@
     "test:integration": "mocha test/integration --exit",
     "test": "npm run test:js && npm run test:package",
     "check": "tsc --noEmit -p tsconfig.check.json",
+    "update-packages": "ncu --upgrade && cd src && ncu --upgrade && cd ../src-admin && ncu --upgrade",
+    "npm": "npm i && cd src && npm i -f && cd ../src-admin && npm i -f",
+    "admin-0-clean": "node tasks --admin-0-clean",
+    "admin-1-npm": "node tasks --admin-1-npm",
+    "admin-2-compile": "node tasks --admin-2-compile",
+    "admin-3-copy": "node tasks --admin-3-copy",
+    "admin-build": "node tasks --admin-build",
     "lint": "eslint"
   },
   "bugs": {
