@@ -134,7 +134,7 @@
     },
     "platform": "Javascript/Node.js",
     "icon": "rct-logo.square.png",
-    "enabled": true,
+    "enabled": false,
     "extIcon": "https://raw.githubusercontent.com/aruttkamp/ioBroker.rct/main/admin/rct-logo.square.png",
     "readme": "https://github.com/aruttkamp/ioBroker.rct/blob/main/README.md",
     "loglevel": "info",
@@ -149,8 +149,11 @@
       "name": {
         "en": "RCT",
         "de": "RCT"
-        }
       },
+      "ignoreConfigUpdate": true,
+      "singleton": false,
+      "fa-icon": "</i><img style='width:24px;margin-bottom:-6px;' src='/adapter/admin/rct.png'><i>"
+    },
     "adminUI": {
       "config": "json",
       "tab": "materialize"
