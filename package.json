@@ -50,8 +50,9 @@
   },
   "main": "main.js",
   "files": [
-    "admin/",
-    "lib/",
+    "admin{,/!(src)/**}/!(tsconfig|tsconfig.*).json",
+    "admin{,/!(src)/**}/*.{html,css,png,svg,jpg,js}",
+    "lib/**/*.js",
     "rct/",
     "iob_npm.done",
     "io-package.json",
