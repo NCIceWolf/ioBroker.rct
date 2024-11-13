@@ -152,7 +152,7 @@
         "js-controller": ">=6.0.0",
         "admin"
       }
-    ],
+    ]
   },
   "native": {
     "rct_ip": "",
