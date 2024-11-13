@@ -18,7 +18,7 @@
 	"dataSource": "poll",
 	"connectionIndicator": "no",
 	"language": "JavaScript",
-	"adminReact": "yes",
+	"adminReact": "no",
 	"tools": [
 		"ESLint",
 		"type checking",
@@ -31,9 +31,9 @@
 	"authorGithub": "aruttkamp",
 	"authorEmail": "ioBroker.rct@ruttkamp.com",
 	"gitRemoteProtocol": "HTTPS",
-	"gitCommit": "no",
+	"gitCommit": "yes",
 	"license": "MIT License",
 	"ci": "gh-actions",
-	"dependabot": "no",
+	"dependabot": "yes",
 	"creatorVersion": "1.33.0"
 }
