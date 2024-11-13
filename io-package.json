@@ -148,10 +148,8 @@
       "config": "json"
     },
     "dependencies": [
-      {
         "js-controller": ">=6.0.0",
         "admin"
-      }
     ]
   },
   "native": {
