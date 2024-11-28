@@ -1,19 +1,14 @@
 // Specialized tsconfig for type-checking js files
 {
-	"extends": "./tsconfig.json",
-	"compilerOptions": {
-		"allowJs": false,
-		"checkJs": false,
-		"noEmit": false,
-		"declaration": false
-	},
-	"include": [
-		"**/*.js",
-		"**/*.d.ts"		
-	],
-	"exclude": [
-		"**/build",
-		"node_modules/",
-		"widgets/"
-	]
+    "extends": "./tsconfig.json",
+    "compilerOptions": {},
+    "include": [
+        "**/*.js",
+        "**/*.d.ts"
+    ],
+    "exclude": [
+        "**/build",
+        "node_modules/",
+        "widgets/"
+    ]
 }
