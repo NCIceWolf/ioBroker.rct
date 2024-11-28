@@ -63,13 +63,15 @@
   ],
   "scripts": {
     "translate": "translate-adapter",
+    "build:ts": "tsc -p tsconfig.build.json",
+    "build": "npm run build:ts",
     "release": "release-script",
     "test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
     "test:package": "mocha test/package --exit",
     "test:integration": "mocha test/integration --exit",
     "test": "npm run test:js && npm run test:package",
     "check": "tsc --noEmit -p tsconfig.check.json",
-    "lint": "eslint"
+    "lint": "eslint -c eslint.config.mjs ."
   },
   "bugs": {
     "url": "https://github.com/aruttkamp/ioBroker.rct/issues"
