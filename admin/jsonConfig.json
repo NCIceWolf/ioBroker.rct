@@ -1,12 +1,11 @@
 {
-    "i18n": true,
     "type": "tabs",
     "iconPosition": "top",
     "tabsStyle": {
         "width": "calc(100% - 100px)"
     },
     "items": {
-        "_GeneralTab": {
+        "GeneralTab": {
             "type": "panel",
             "label": "General settings",
             "items": {
@@ -63,7 +62,7 @@
                 }
             }
         },
-        "_WriteSettings": {
+        "WriteSettings": {
             "type": "panel",
             "label": "Write settings",
             "items": {
