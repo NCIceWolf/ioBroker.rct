@@ -149,7 +149,7 @@
     "stopBeforeUpdate": true,
     "dataSource": "poll",
     "adminUI": {
-      "config": "json"
+      "config": "materialize"
       },
     "globalDependencies": [
       {
