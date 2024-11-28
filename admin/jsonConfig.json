@@ -6,7 +6,7 @@
         "width": "calc(100% - 100px)"
     },
     "items": {
-        "_general": {
+        "_GeneralTab": {
             "type": "panel",
             "label": "General settings",
             "items": {
@@ -63,7 +63,7 @@
                 }
             }
         },
-        "_write": {
+        "_WriteSettings": {
             "type": "panel",
             "label": "Write settings",
             "items": {
