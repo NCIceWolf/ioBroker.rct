@@ -22,7 +22,9 @@
     "node": ">= 18"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.2.2"
+    "@iobroker/adapter-core": "^3.2.2",
+    "@apollon/iobroker-tools": "^0.3.0",
+    "axios": "^1.7.7"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^3.8.0",
@@ -31,6 +33,7 @@
     "@alcalzone/release-script-plugin-manual-review": "^3.7.0",
     "@iobroker/adapter-dev": "^1.3.0",
     "@iobroker/testing": "^5.0.0",
+    "@eslint/js": "^9.15.0",
     "@types/chai": "^5.0.1",
     "@types/chai-as-promised": "^8.0.1",
     "@types/mocha": "^10.0.10",
@@ -71,7 +74,7 @@
     "test:integration": "mocha test/integration --exit",
     "test": "npm run test:js && npm run test:package",
     "check": "tsc --noEmit -p tsconfig.check.json",
-    "lint": "eslint -c eslint.config.mjs ."
+    "lint": "eslint"
   },
   "bugs": {
     "url": "https://github.com/aruttkamp/ioBroker.rct/issues"
