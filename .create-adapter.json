@@ -18,7 +18,7 @@
 	"dataSource": "poll",
 	"connectionIndicator": "no",
 	"language": "JavaScript",
-	"adminReact": "no",
+	"adminReact": "yes",
 	"tools": [
 		"ESLint",
 		"type checking",
