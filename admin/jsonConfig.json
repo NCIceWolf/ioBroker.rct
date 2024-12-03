@@ -93,7 +93,7 @@
                         "lg": 4,
                         "xl": 4,
                         "label": "Use write-support towards RCT inverter. Use at own risk!!",
-                        "help": "This enables the write support to the RCT inverter. Please check help pages for further infos."
+                        "help": "This enables the write support to the RCT inverter. Please check help pages for further information."
                     },
                     "Power_mng.soc_min": {
                         "newLine": true,
@@ -107,24 +107,37 @@
                         "lg": 4,
                         "xl": 4,
                         "label": "SoC-Minimum",
-                        "help": "Desired value for "
+                        "help": "Desired value for Minimum SoC of connected RCT-Battery"
                     },
-                    "Power_mng.soc_max": {
-                        "newLine": false,
+                     "Power_mng.soc_strategy": {
+                        "newLine": true,
                         "type": "text",
                         "hidden": "!data.Write_support",
-                        "min": 10,
-                        "max": 100,
+                        "min": 0,
+                        "max": 5,
                         "xs": 12,
                         "sm": 12,
                         "md": 6,
                         "lg": 4,
                         "xl": 4,
-                        "label": "SoC-Maximum",
-                        "help": "Elements to be fetched from inverter (leave blank for standard)"
+                        "label": "SoC-Strategy",
+                        "help": "Desired value for SoC-Strategy: 0: SOC-Target = SOC, 1: Constant, 2: External, 3: Median battery voltage, 4: Internal, 5: Timeplan (Default: 4)"
+                    },
+                 "Power_mng.battery_power_extern": {
+                        "newLine": true,
+                        "type": "text",
+                        "hidden": "!data.Write_support",
+                        "min": -6000,
+                        "max": 6000,
+                        "xs": 12,
+                        "sm": 12,
+                        "md": 6,
+                        "lg": 4,
+                        "xl": 4,
+                        "label": "Battery target power",
+                        "help": "Desired value for battery target power (-6000W to 6000W; negative = charge, positive = discharge)"
                     }
             }
         }
-        
     }
 }
