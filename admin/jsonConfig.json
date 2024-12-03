@@ -5,7 +5,7 @@
         "width": "calc(100% - 100px)"
     },
     "items": {
-        "GeneralTab":{
+        "_StandardTab":{
             "type": "panel",
             "label": "General settings",
             "items": {
@@ -23,7 +23,7 @@
                 "dividerHdr": {
                     "newLine": true,
                     "type": "header",
-                    "text": "DIVIDER",
+                    "text": "---",
                     "size": 2
                 },
                 "rct_ip": {
@@ -63,7 +63,7 @@
             }
         },
         
-        "WriteSettings":{
+        "_WriteSettingsTab":{
             "type": "panel",
             "label": "Write settings",
             "items": {
@@ -81,10 +81,10 @@
                     "dividerHdr": {
                         "newLine": true,
                         "type": "header",
-                        "text": "DIVIDER",
+                        "text": "---",
                         "size": 2
                     },
-                    "write_support": {
+                    "Write_support": {
                         "newLine": true,
                         "type": "checkbox",
                         "xs": 12,
@@ -94,6 +94,34 @@
                         "xl": 4,
                         "label": "Use write-support towards RCT inverter. Use at own risk!!",
                         "help": "This enables the write support to the RCT inverter. Please check help pages for further infos."
+                    },
+                    "Power_mng.soc_min": {
+                        "newLine": true,
+                        "type": "text",
+                        "hidden": "!data.Write_support",
+                        "min": 7,
+                        "max": 95,
+                        "xs": 12,
+                        "sm": 12,
+                        "md": 6,
+                        "lg": 4,
+                        "xl": 4,
+                        "label": "SoC-Minimum",
+                        "help": "Desired value for "
+                    },
+                    "Power_mng.soc_max": {
+                        "newLine": false,
+                        "type": "text",
+                        "hidden": "!data.Write_support",
+                        "min": 10,
+                        "max": 100,
+                        "xs": 12,
+                        "sm": 12,
+                        "md": 6,
+                        "lg": 4,
+                        "xl": 4,
+                        "label": "SoC-Maximum",
+                        "help": "Elements to be fetched from inverter (leave blank for standard)"
                     }
             }
         }
