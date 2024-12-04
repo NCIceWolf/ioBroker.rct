@@ -5,7 +5,7 @@
         "width": "calc(100% - 100px)"
     },
     "items": {
-        "_StandardTab":{
+        "GeneralTab":{
             "type": "panel",
             "label": "General settings",
             "items": {
@@ -20,15 +20,9 @@
                     "xl": 12,
                     "text": "General Settings"
                  },
-                "dividerHdr": {
-                    "newLine": true,
-                    "type": "header",
-                    "text": "---",
-                    "size": 2
-                },
                 "rct_ip": {
                     "newLine": true,
-                    "type": "text",
+                    "type": "ip",
                     "xs": 12,
                     "sm": 12,
                     "md": 6,
@@ -41,6 +35,7 @@
                     "type": "number",
                     "min": 10,
                     "max": 3600,
+                    "step": 1,
                     "xs": 12,
                     "sm": 12,
                     "md": 6,
@@ -78,12 +73,6 @@
                     "xl": 12,
                     "text": "Settings for write access to RCT inverter"
                      },
-                    "dividerHdr": {
-                        "newLine": true,
-                        "type": "header",
-                        "text": "---",
-                        "size": 2
-                    },
                     "Write_support": {
                         "newLine": true,
                         "type": "checkbox",
@@ -93,49 +82,74 @@
                         "lg": 4,
                         "xl": 4,
                         "label": "Use write-support towards RCT inverter. Use at own risk!!",
-                        "help": "This enables the write support to the RCT inverter. Please check help pages for further information."
+                        "help": "This enables write support to the RCT inverter. Please check help pages for further information."
+                    },
+                    "_dividerHdr": {
+                        "newLine": true,
+                        "type": "header",
+                        "size": 2
                     },
                     "Power_mng.soc_min": {
                         "newLine": true,
-                        "type": "text",
+                        "type": "number",
                         "hidden": "!data.Write_support",
                         "min": 7,
                         "max": 95,
+                        "step": 1,
                         "xs": 12,
                         "sm": 12,
                         "md": 6,
                         "lg": 4,
                         "xl": 4,
                         "label": "SoC-Minimum",
-                        "help": "Desired value for Minimum SoC of connected RCT-Battery"
+                        "help": "Desired value for Minimum SoC of connected RCT-Battery in percent (7-90; default 7)",
+                        "default": 7
+                    },
+                    "Power_mng.soc_max": {
+                        "type": "number",
+                        "hidden": "!data.Write_support",
+                        "min": 30,
+                        "max": 97,
+                        "step": 1,
+                        "xs": 12,
+                        "sm": 12,
+                        "md": 6,
+                        "lg": 4,
+                        "xl": 4,
+                        "label": "SoC-Minimum",
+                        "help": "Desired value for Maximum SoC of connected RCT-Battery in percent (30-100; default 97)",
+                        "default": 97
                     },
                      "Power_mng.soc_strategy": {
                         "newLine": true,
-                        "type": "text",
+                        "type": "number",
                         "hidden": "!data.Write_support",
                         "min": 0,
                         "max": 5,
+                        "step": 1,
                         "xs": 12,
                         "sm": 12,
                         "md": 6,
                         "lg": 4,
                         "xl": 4,
                         "label": "SoC-Strategy",
-                        "help": "Desired value for SoC-Strategy: 0: SOC-Target = SOC, 1: Constant, 2: External, 3: Median battery voltage, 4: Internal, 5: Timeplan (Default: 4)"
+                        "help": "Desired value for SoC-Strategy: 0: SOC-Target = SOC, 1: Constant, 2: External, 3: Median battery voltage, 4: Internal, 5: Timeplan (default: 4)",
+                        "default": 4
                     },
-                 "Power_mng.battery_power_extern": {
-                        "newLine": true,
-                        "type": "text",
+                     "Power_mng.battery_power_extern": {
+                        "type": "number",
                         "hidden": "!data.Write_support",
                         "min": -6000,
                         "max": 6000,
+                        "step": 1,
                         "xs": 12,
                         "sm": 12,
                         "md": 6,
                         "lg": 4,
                         "xl": 4,
                         "label": "Battery target power",
-                        "help": "Desired value for battery target power (-6000W to 6000W; negative = charge, positive = discharge)"
+                        "help": "Desired value for battery target power in Watt (-6000W to 6000W; negative = charge, positive = discharge; default: 0)",
+                        "default": 0
                     }
             }
         }
