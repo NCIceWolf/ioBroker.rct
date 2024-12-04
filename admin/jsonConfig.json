@@ -18,14 +18,23 @@
                     "md": 12,
                     "lg": 12,
                     "xl": 12,
-                    "text": "General Settings"
+                    "label": "General Settings"
                  },
-                "rct_ip": {
+                "rct_ipTxt": {
+                    "type": "staticText",
+                    "text": "Local RCT inverter ip-address (i.e. 192.168.0.10)",
                     "newLine": true,
-                    "type": "ip",
                     "xs": 12,
                     "sm": 12,
-                    "md": 6,
+                    "md": 12,
+                    "lg": 6,
+                    "xl": 6
+                },
+                "rct_ip": {
+                    "type": "text",
+                    "xs": 4,
+                    "sm": 4,
+                    "md": 4,
                     "lg": 4,
                     "xl": 4,
                     "label": "RCT ip-address",
