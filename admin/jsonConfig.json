@@ -12,13 +12,13 @@
                 "_Headline1": {
                     "newLine": true,
                     "type": "header",
+                    "text": "General Settings",
                     "size": 1,
                     "xs": 12,
                     "sm": 12,
                     "md": 12,
                     "lg": 12,
-                    "xl": 12,
-                    "text": "General Settings"
+                    "xl": 12
                  },
                 "rct_ip": {
                     "type": "text",
@@ -28,7 +28,7 @@
                     "md": 4,
                     "lg": 4,
                     "xl": 4,
-                    "text": "RCT IP-address",
+                    "label": "RCT IP-address",
                     "help": "Local RCT inverter IP-address (i.e. 192.168.0.10)"
                 },
                "rct_refresh": {
@@ -41,7 +41,7 @@
                     "md": 6,
                     "lg": 4,
                     "xl": 4,
-                    "text": "Refresh interval",
+                    "label": "Refresh interval",
                     "help": "Desired refresh interval for elements in seconds (10 - 3600)"
                 },
               "rct_elements": {
@@ -52,7 +52,7 @@
                     "md": 12,
                     "lg": 12,
                     "xl": 12,
-                    "text": "Elements",
+                    "label": "Elements",
                     "help": "Elements to be fetched from inverter (leave blank for standard)"
                 }
             }
@@ -65,13 +65,13 @@
                 "_Headline1": {
                     "newLine": true,
                     "type": "header",
+                    "text": "Settings for write access to RCT inverter",
                     "size": 1,
                     "xs": 12,
                     "sm": 12,
                     "md": 12,
                     "lg": 12,
-                    "xl": 12,
-                    "text": "Settings for write access to RCT inverter"
+                    "xl": 12
                      },
                     "Write_support": {
                         "newLine": true,
