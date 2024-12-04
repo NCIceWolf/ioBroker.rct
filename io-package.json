@@ -141,19 +141,18 @@
     "tier": 2,
     "mode": "daemon",
     "messagebox": true,
-    "subscribe": "messagebox",
+    "allowInit": true,
     "eraseOnUpload": true,
     "type": "energy",
     "compact": true,
     "connectionType": "local",
-    "stopBeforeUpdate": true,
     "dataSource": "poll",
     "adminUI": {
       "config": "json"
       },
     "globalDependencies": [
       {
-        "admin": ">=6.0.0"
+        "admin": ">=7.0.0"
       }
     ],
     "dependencies": [
