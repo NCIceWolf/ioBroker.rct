@@ -20,25 +20,16 @@
                     "xl": 12,
                     "label": "General Settings"
                  },
-                "rct_ipTxt": {
-                    "type": "staticText",
-                    "text": "Local RCT inverter ip-address (i.e. 192.168.0.10)",
-                    "newLine": true,
-                    "xs": 12,
-                    "sm": 12,
-                    "md": 12,
-                    "lg": 6,
-                    "xl": 6
-                },
                 "rct_ip": {
                     "type": "text",
+                    "newLine": true,
                     "xs": 4,
                     "sm": 4,
                     "md": 4,
                     "lg": 4,
                     "xl": 4,
-                    "label": "RCT ip-address",
-                    "help": "Local RCT inverter ip-address (i.e. 192.168.0.10)"
+                    "text": "RCT IP-address",
+                    "help": "Local RCT inverter IP-address (i.e. 192.168.0.10)"
                 },
                "rct_refresh": {
                     "type": "number",
@@ -50,7 +41,7 @@
                     "md": 6,
                     "lg": 4,
                     "xl": 4,
-                    "label": "Refresh interval",
+                    "text": "Refresh interval",
                     "help": "Desired refresh interval for elements in seconds (10 - 3600)"
                 },
               "rct_elements": {
@@ -58,10 +49,10 @@
                     "type": "text",
                     "xs": 12,
                     "sm": 12,
-                    "md": 6,
-                    "lg": 4,
-                    "xl": 4,
-                    "label": "Elements",
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12,
+                    "text": "Elements",
                     "help": "Elements to be fetched from inverter (leave blank for standard)"
                 }
             }
