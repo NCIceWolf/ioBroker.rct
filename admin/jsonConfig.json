@@ -104,7 +104,7 @@
                         "xl": 6,
                         "label": "SoC-Minimum",
                         "help": "Desired value for Minimum SoC of connected RCT-Battery in percent (7-90; default 7)",
-                        "default": 7
+                        "default": "7"
                     },
                     "Power_mng.soc_max": {
                         "type": "number",
@@ -119,7 +119,7 @@
                         "xl": 6,
                         "label": "SoC-Maximum",
                         "help": "Desired value for Maximum SoC of connected RCT-Battery in percent (30-100; default 97)",
-                        "default": 97
+                        "default": "97"
                     },
                      "Power_mng.soc_strategy": {
                         "newLine": true,
@@ -131,11 +131,11 @@
                         "xs": 12,
                         "sm": 12,
                         "md": 6,
-                        "lg": 4,
-                        "xl": 4,
+                        "lg": 6,
+                        "xl": 6,
                         "label": "SoC-Strategy",
                         "help": "Desired value for SoC-Strategy: 0: SOC-Target = SOC, 1: Constant, 2: External, 3: Median battery voltage, 4: Internal, 5: Timeplan (default: 4)",
-                        "default": 4
+                        "default": "4"
                     },
                      "Power_mng.battery_power_extern": {
                         "type": "number",
@@ -146,11 +146,11 @@
                         "xs": 12,
                         "sm": 12,
                         "md": 6,
-                        "lg": 4,
-                        "xl": 4,
+                        "lg": 6,
+                        "xl": 6,
                         "label": "Battery target power",
                         "help": "Desired value for battery target power in Watt (-6000W to 6000W; negative = charge, positive = discharge; default: 0)",
-                        "default": 0
+                        "default": "0"
                     }
             }
         }
