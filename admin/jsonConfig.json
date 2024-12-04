@@ -1,158 +1,982 @@
 {
-    "i18n": true,
-    "type": "tabs",
-    "tabsStyle": {
-        "width": "calc(100% - 100px)"
-    },
-    "items": {
-        "GeneralTab":{
-            "type": "panel",
-            "label": "General settings",
-            "items": {
-                "_Headline1": {
-                    "newLine": true,
-                    "type": "header",
-                    "text": "General Settings",
-                    "size": 1,
-                    "xs": 12,
-                    "sm": 12,
-                    "md": 12,
-                    "lg": 12,
-                    "xl": 12
-                 },
-                "rct_ip": {
-                    "type": "text",
-                    "newLine": true,
-                    "xs": 4,
-                    "sm": 4,
-                    "md": 4,
-                    "lg": 4,
-                    "xl": 4,
-                    "label": "RCT IP-address",
-                    "help": "Local RCT inverter IP-address (i.e. 192.168.0.10)"
-                },
-               "rct_refresh": {
-                    "type": "number",
-                    "min": 10,
-                    "max": 3600,
-                    "step": 1,
-                    "xs": 12,
-                    "sm": 12,
-                    "md": 6,
-                    "lg": 4,
-                    "xl": 4,
-                    "label": "Refresh interval",
-                    "help": "Desired refresh interval for elements in seconds (10 - 3600)"
-                },
-              "rct_elements": {
-                    "newLine": true,
-                    "type": "text",
-                    "xs": 12,
-                    "sm": 12,
-                    "md": 12,
-                    "lg": 12,
-                    "xl": 12,
-                    "label": "Elements",
-                    "help": "Elements to be fetched from inverter (leave blank for standard)"
-                }
-            }
-        },
-        
-        "_WriteSettingsTab":{
-            "type": "panel",
-            "label": "Write settings",
-            "items": {
-                "_Headline1": {
-                    "newLine": true,
-                    "type": "header",
-                    "text": "Write access to RCT inverter",
-                    "size": 1,
-                    "xs": 12,
-                    "sm": 12,
-                    "md": 12,
-                    "lg": 12,
-                    "xl": 12
-                     },
-                    "Write_support": {
-                        "newLine": true,
-                        "type": "checkbox",
-                        "xs": 12,
-                        "sm": 12,
-                        "md": 6,
-                        "lg": 4,
-                        "xl": 4,
-                        "label": "Use write-support towards RCT inverter. Use at own risk!!",
-                        "help": "This enables write support to the RCT inverter. Please check help pages for further information."
-                    },
-                    "_dividerHdr": {
-                        "newLine": true,
-                        "type": "header",
-                        "text": "",
-                        "size": 2
-                    },
-                    "Power_mng.soc_min": {
-                        "newLine": true,
-                        "type": "number",
-                        "hidden": "!data.Write_support",
-                        "min": 7,
-                        "max": 95,
-                        "step": 1,
-                        "xs": 12,
-                        "sm": 12,
-                        "md": 6,
-                        "lg": 6,
-                        "xl": 6,
-                        "label": "SoC-Minimum",
-                        "help": "Desired value for Minimum SoC of connected RCT-Battery in percent (7-90; default 7)",
-                        "default": "7"
-                    },
-                    "Power_mng.soc_max": {
-                        "type": "number",
-                        "hidden": "!data.Write_support",
-                        "min": 30,
-                        "max": 97,
-                        "step": 1,
-                        "xs": 12,
-                        "sm": 12,
-                        "md": 6,
-                        "lg": 6,
-                        "xl": 6,
-                        "label": "SoC-Maximum",
-                        "help": "Desired value for Maximum SoC of connected RCT-Battery in percent (30-100; default 97)",
-                        "default": "97"
-                    },
-                     "Power_mng.soc_strategy": {
-                        "newLine": true,
-                        "type": "number",
-                        "hidden": "!data.Write_support",
-                        "min": 0,
-                        "max": 5,
-                        "step": 1,
-                        "xs": 12,
-                        "sm": 12,
-                        "md": 6,
-                        "lg": 6,
-                        "xl": 6,
-                        "label": "SoC-Strategy",
-                        "help": "Desired value for SoC-Strategy: 0: SOC-Target = SOC, 1: Constant, 2: External, 3: Median battery voltage, 4: Internal, 5: Timeplan (default: 4)",
-                        "default": "4"
-                    },
-                     "Power_mng.battery_power_extern": {
-                        "type": "number",
-                        "hidden": "!data.Write_support",
-                        "min": -6000,
-                        "max": 6000,
-                        "step": 1,
-                        "xs": 12,
-                        "sm": 12,
-                        "md": 6,
-                        "lg": 6,
-                        "xl": 6,
-                        "label": "Battery target power",
-                        "help": "Desired value for battery target power in Watt (-6000W to 6000W; negative = charge, positive = discharge; default: 0)",
-                        "default": "0"
-                    }
-            }
-        }
-    }
+	"i18n": true,
+	"type": "tabs",
+	"tabsStyle": {
+		"width": "calc(100% - 100px)"
+	},
+	"items": {
+		"_StandardTab": {
+			"type": "panel",
+			"label": "LBL_StandardTab",
+			"items": {
+				"TibberAPIToken": {
+					"type": "text",
+					"label": "LBL_TibberAPIToken",
+					"maxLength": 60,
+					"xs": 12,
+					"sm": 12,
+					"md": 8,
+					"lg": 6,
+					"xl": 4,
+					"newLine": true
+				},
+				"_referralLink": {
+					"type": "staticLink",
+					"label": "LBL_referralLink",
+					"href": "https://invite.tibber.com/mu8c82n5",
+					"button": true,
+					"icon": "info",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"HomesList": {
+					"type": "table",
+					"label": "LBL_HomesList",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"items": [
+						{
+							"type": "selectSendTo",
+							"label": "LBL_item_homeID",
+							"tooltip": "TTIP_item_homeID",
+							"command": "HomesForConfig",
+							"attr": "homeID",
+							"filter": false,
+							"sort": false,
+							"width": "40%",
+							"default": "No Home selected"
+						},
+						{
+							"type": "checkbox",
+							"label": "LBL_item_priceDataPollActive",
+							"tooltip": "TTIP_item_priceDataPollActive",
+							"attr": "priceDataPollActive",
+							"filter": false,
+							"sort": false,
+							"width": "10%",
+							"default": true
+						},
+						{
+							"type": "checkbox",
+							"label": "LBL_item_feedActive",
+							"tooltip": "TTIP_item_feedActive",
+							"attr": "feedActive",
+							"filter": false,
+							"sort": false,
+							"width": "10%",
+							"default": false
+						},
+						{
+							"type": "checkbox",
+							"label": "LBL_item_statsActive",
+							"tooltip": "TTIP_item_statsActive",
+							"attr": "statsActive",
+							"filter": false,
+							"sort": false,
+							"width": "10%",
+							"default": false
+						},
+						{
+							"type": "number",
+							"label": "LBL_item_numberConsHourly",
+							"tooltip": "TTIP_item_numberConsHourly",
+							"attr": "numberConsHourly",
+							"disabled": "!data.statsActive",
+							"min": 0,
+							"max": 744,
+							"step": 1,
+							"width": "6%",
+							"default": 24
+						},
+						{
+							"type": "number",
+							"label": "LBL_item_numberConsDaily",
+							"tooltip": "TTIP_item_numberConsDaily",
+							"attr": "numberConsDaily",
+							"disabled": "!data.statsActive",
+							"min": 0,
+							"max": 31,
+							"step": 1,
+							"width": "6%",
+							"default": 7
+						},
+						{
+							"type": "number",
+							"label": "LBL_item_numberConsWeekly",
+							"tooltip": "TTIP_item_numberConsWeekly",
+							"attr": "numberConsWeekly",
+							"disabled": "!data.statsActive",
+							"min": 0,
+							"max": 52,
+							"step": 1,
+							"width": "6%",
+							"default": 4
+						},
+						{
+							"type": "number",
+							"label": "LBL_item_numberConsMonthly",
+							"tooltip": "TTIP_item_numberConsMonthly",
+							"attr": "numberConsMonthly",
+							"disabled": "!data.statsActive",
+							"min": 0,
+							"max": 12,
+							"step": 1,
+							"width": "6%",
+							"default": 4
+						},
+						{
+							"type": "number",
+							"label": "LBL_item_numberConsAnnual",
+							"tooltip": "TTIP_item_numberConsAnnual",
+							"attr": "numberConsAnnual",
+							"disabled": "!data.statsActive",
+							"min": 0,
+							"max": 1,
+							"step": 1,
+							"width": "6%",
+							"default": 1
+						}
+					]
+				},
+
+				"_feedDataDetailHeader": {
+					"type": "header",
+					"text": "LBL_feedDataDetailHeader",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"size": 3
+				},
+
+				"FeedConfigLastMeterConsumption": {
+					"type": "checkbox",
+					"label": "LastMeterConsumption",
+					"noTranslation": true,
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4,
+					"newLine": true
+				},
+				"FeedConfigAccumulatedConsumption": {
+					"type": "checkbox",
+					"label": "AccumulatedConsumption",
+					"noTranslation": true,
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+				"FeedConfigAccumulatedConsumptionLastHour": {
+					"type": "checkbox",
+					"label": "AccumulatedConsumptionLastHour",
+					"noTranslation": true,
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+
+				"FeedConfigLastMeterProduction": {
+					"type": "checkbox",
+					"noTranslation": true,
+					"label": "LastMeterProduction",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4,
+					"newLine": true
+				},
+				"FeedConfigAccumulatedProduction": {
+					"type": "checkbox",
+					"noTranslation": true,
+					"label": "AccumulatedProduction",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+				"FeedConfigAccumulatedProductionLastHour": {
+					"type": "checkbox",
+					"noTranslation": true,
+					"label": "AccumulatedProductionLastHour",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+
+				"FeedConfigAccumulatedCost": {
+					"type": "checkbox",
+					"noTranslation": true,
+					"label": "AccumulatedCost",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4,
+					"newLine": true
+				},
+				"FeedConfigAccumulatedReward": {
+					"type": "checkbox",
+					"noTranslation": true,
+					"label": "AccumulatedReward",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+				"FeedConfigCurrency": {
+					"type": "checkbox",
+					"noTranslation": true,
+					"label": "Currency",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+
+				"FeedConfigMinPower": {
+					"type": "checkbox",
+					"noTranslation": true,
+					"label": "MinPower",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4,
+					"newLine": true
+				},
+				"FeedConfigAveragePower": {
+					"type": "checkbox",
+					"noTranslation": true,
+					"label": "AveragePower",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+				"FeedConfigMaxPower": {
+					"type": "checkbox",
+					"noTranslation": true,
+					"label": "MaxPower",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+
+				"FeedConfigPowerProduction": {
+					"type": "checkbox",
+					"noTranslation": true,
+					"label": "PowerProduction",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4,
+					"newLine": true
+				},
+				"FeedConfigMinPowerProduction": {
+					"type": "checkbox",
+					"noTranslation": true,
+					"label": "MinPowerProduction",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+				"FeedConfigMaxPowerProduction": {
+					"type": "checkbox",
+					"noTranslation": true,
+					"label": "MaxPowerProduction",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+
+				"FeedConfigPowerFactor": {
+					"type": "checkbox",
+					"noTranslation": true,
+					"label": "PowerFactor",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4,
+					"newLine": true
+				},
+				"FeedConfigSignalStrength": {
+					"type": "checkbox",
+					"noTranslation": true,
+					"label": "SignalStrength",
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+
+				"_phases": {
+					"type": "staticText",
+					"hidden": "!data.TibberAPIToken",
+					"label": "LBL_phases",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+
+				"FeedConfigVoltagePhase1": {
+					"type": "checkbox",
+					"label": "VoltagePhase1",
+					"noTranslation": true,
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4,
+					"newLine": true
+				},
+				"FeedConfigVoltagePhase2": {
+					"type": "checkbox",
+					"label": "VoltagePhase2",
+					"noTranslation": true,
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+				"FeedConfigVoltagePhase3": {
+					"type": "checkbox",
+					"label": "VoltagePhase3",
+					"noTranslation": true,
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+
+				"FeedConfigCurrentL1": {
+					"type": "checkbox",
+					"label": "CurrentL1",
+					"noTranslation": true,
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4,
+					"newLine": true
+				},
+				"FeedConfigCurrentL2": {
+					"type": "checkbox",
+					"label": "CurrentL2",
+					"noTranslation": true,
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+				"FeedConfigCurrentL3": {
+					"type": "checkbox",
+					"label": "CurrentL3",
+					"noTranslation": true,
+					"hidden": "!data.TibberAPIToken",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+
+				"_headerDocumentation": {
+					"type": "header",
+					"text": "",
+					"noTranslation": true,
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"size": 3
+				},
+				"_helpLink": {
+					"type": "staticLink",
+					"button": true,
+					"variant": "contained",
+					"icon": "info",
+					"label": "LBL_helpLink",
+					"href": "https://github.com/hombach/ioBroker.tibberlink/blob/master/README.md",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				}
+			}
+		},
+
+		"_CalculatorTab": {
+			"type": "panel",
+			"label": "LBL_CalculatorTab",
+			"hidden": "!data.TibberAPIToken",
+			"xs": 12,
+			"sm": 12,
+			"md": 12,
+			"lg": 12,
+			"xl": 12,
+			"items": {
+				"UseCalculator": {
+					"type": "checkbox",
+					"label": "LBL_UseCalculator",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12
+				},
+
+				"CalculatorList": {
+					"type": "accordion",
+					"titleAttr": "chName",
+					"label": "LBL_CalculatorList",
+					"hidden": "!data.UseCalculator",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"items": [
+						{
+							"type": "selectSendTo",
+							"label": "LBL_item_chHomeID",
+							"tooltip": "TTIP_item_chHomeID",
+							"attr": "chHomeID",
+							"default": "No Home selected",
+							"command": "HomesForCalculator",
+							"xs": 12,
+							"sm": 12,
+							"md": 6,
+							"lg": 6,
+							"xl": 6
+						},
+						{
+							"type": "select",
+							"label": "LBL_item_chType",
+							"tooltip": "TTIP_item_chType",
+							"attr": "chType",
+							"options": [
+								{
+									"label": "LBL_item_chType_option_1",
+									"value": 1
+								},
+								{
+									"label": "LBL_item_chType_option_2",
+									"value": 2
+								},
+								{
+									"label": "LBL_item_chType_option_3",
+									"value": 3
+								},
+								{
+									"label": "LBL_item_chType_option_4",
+									"value": 4
+								},
+								{
+									"label": "LBL_item_chType_option_5",
+									"value": 5
+								},
+								{
+									"label": "LBL_item_chType_option_6",
+									"value": 6
+								},
+								{
+									"label": "LBL_item_chType_option_7",
+									"value": 7
+								}
+							],
+							"xs": 12,
+							"sm": 12,
+							"md": 6,
+							"lg": 6,
+							"xl": 6
+						},
+
+						{
+							"type": "text",
+							"label": "LBL_item_chName",
+							"tooltip": "TTIP_item_chName",
+							"maxLength": 25,
+							"attr": "chName",
+							"validator": "if(data.name === '' || data.name === null){return false;}else{const myRegEx = /^([0-9a-z_ ])*$/i; return myRegEx.test(data.name);}",
+							"validatorNoSaveOnError": true,
+							"default": "channel name",
+							"xs": 12,
+							"sm": 12,
+							"md": 12,
+							"lg": 12,
+							"xl": 12
+						},
+
+						{
+							"type": "objectId",
+							"label": "LBL_item_chTargetState",
+							"tooltip": "TTIP_item_chTargetState",
+							"attr": "chTargetState",
+							"default": "",
+							"xs": 12,
+							"sm": 12,
+							"md": 12,
+							"lg": 12,
+							"xl": 12
+						},
+
+						{
+							"type": "text",
+							"label": "LBL_item_chValueOn",
+							"tooltip": "TTIP_item_chValueOn",
+							"maxLength": 20,
+							"attr": "chValueOn",
+							"default": "true",
+							"xs": 12,
+							"sm": 12,
+							"md": 6,
+							"lg": 6,
+							"xl": 6
+						},
+						{
+							"type": "text",
+							"label": "LBL_item_chValueOff",
+							"tooltip": "TTIP_item_chValueOff",
+							"maxLength": 20,
+							"attr": "chValueOff",
+							"default": "false",
+							"xs": 12,
+							"sm": 12,
+							"md": 6,
+							"lg": 6,
+							"xl": 6
+						},
+
+						{
+							"type": "objectId",
+							"label": "LBL_item_chTargetState2",
+							"tooltip": "TTIP_item_chTargetState2",
+							"attr": "chTargetState2",
+							"hidden": "data.chType !== 7",
+							"xs": 12,
+							"sm": 12,
+							"md": 12,
+							"lg": 12,
+							"xl": 12
+						},
+
+						{
+							"type": "text",
+							"label": "LBL_item_chValueOn2",
+							"tooltip": "TTIP_item_chValueOn2",
+							"maxLength": 20,
+							"attr": "chValueOn2",
+							"default": "true",
+							"xs": 12,
+							"sm": 12,
+							"md": 6,
+							"lg": 6,
+							"xl": 6,
+							"hidden": "data.chType !== 7"
+						},
+						{
+							"type": "text",
+							"label": "LBL_item_chValueOff2",
+							"tooltip": "TTIP_item_chValueOff2",
+							"maxLength": 20,
+							"attr": "chValueOff2",
+							"default": "false",
+							"xs": 12,
+							"sm": 12,
+							"md": 6,
+							"lg": 6,
+							"xl": 6,
+							"hidden": "data.chType !== 7"
+						}
+					]
+				},
+
+				"_calculatorhelp1": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp1",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp2": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp2",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp3": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp3",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp4": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp4",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp5": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp5",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp6": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp6",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp7": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp7",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp8": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp8",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp9": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp9",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp10": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp10",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp11": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp11",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp12": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp12",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp13": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp13",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp14": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp14",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp15": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp15",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_calculatorhelp16": {
+					"type": "staticText",
+					"hidden": "!data.UseCalculator",
+					"label": "LBL_calculatorhelp16",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				}
+			}
+		},
+
+		"_SpecialsTab": {
+			"type": "panel",
+			"label": "LBL_SpecialsTab",
+			"hidden": "!data.TibberAPIToken",
+			"items": {
+				"UseObsoleteStats": {
+					"type": "checkbox",
+					"label": "LBL_UseObsoleteStats",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+
+				"_specialshelp1": {
+					"type": "staticText",
+					"label": "LBL_specialshelp1",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				}
+			}
+		},
+
+		"_LocalPulseTab": {
+			"type": "panel",
+			"label": "LBL_LocalPulseTab",
+			"items": {
+				"UseLocalPulseData": {
+					"type": "checkbox",
+					"label": "LBL_item_UseLocalPulseData",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_localpulsehelp1": {
+					"type": "staticText",
+					"label": "LBL_item_localpulsehelp1",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_localpulsehelp2": {
+					"type": "staticText",
+					"label": "LBL_item_localpulsehelp2",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_localpulsehelp3": {
+					"type": "staticText",
+					"label": "LBL_item_localpulsehelp3",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": true
+				},
+				"_localpulsehelp4": {
+					"type": "staticLink",
+					"label": "LBL_item_localpulsehelp4",
+					"href": "https://github.com/marq24/ha-tibber-pulse-local",
+					"button": false,
+					"variant": "text",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"newLine": false
+				},
+
+				"PulseList": {
+					"type": "table",
+					"label": "LBL_PulseList",
+					"hidden": "!data.UseLocalPulseData",
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"items": [
+						{
+							"type": "text",
+							"label": "LBL_item_tibberBridgeUrl",
+							"tooltip": "TTIP_item_tibberBridgeUrl",
+							"maxLength": 30,
+							"attr": "tibberBridgeUrl",
+							"filter": false,
+							"sort": false,
+							"width": "40%",
+							"default": "tibber-host"
+						},
+						{
+							"type": "text",
+							"label": "LBL_item_tibberBridgePassword",
+							"tooltip": "TTIP_item_tibberBridgePassword",
+							"maxLength": 20,
+							"attr": "tibberBridgePassword",
+							"filter": false,
+							"sort": false,
+							"width": "40%",
+							"default": "xxxx-xxxx"
+						},
+						{
+							"type": "number",
+							"label": "LBL_item_tibberBridgePassword",
+							"tooltip": "TTIP_item_tibberBridgePassword",
+							"attr": "tibberPulseLocalNodeId",
+							"min": 0,
+							"max": 99,
+							"step": 1,
+							"width": "10%",
+							"default": 1
+						},
+						{
+							"type": "number",
+							"label": "LBL_item_tibberBridgeRawDataInterval",
+							"tooltip": "TTIP_item_tibberBridgeRawDataInterval",
+							"attr": "tibberBridgeRawDataInterval",
+							"min": 1000,
+							"max": 100000,
+							"step": 100,
+							"width": "10%",
+							"default": 2000
+						}
+					]
+				}
+			}
+		}
+	}
 }
