@@ -87,6 +87,7 @@
                     "_dividerHdr": {
                         "newLine": true,
                         "type": "header",
+                        "text": "",
                         "size": 2
                     },
                     "Power_mng.soc_min": {
