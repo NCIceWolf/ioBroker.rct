@@ -65,7 +65,7 @@
                 "_Headline1": {
                     "newLine": true,
                     "type": "header",
-                    "text": "Settings for write access to RCT inverter",
+                    "text": "Write access to RCT inverter",
                     "size": 1,
                     "xs": 12,
                     "sm": 12,
@@ -100,8 +100,8 @@
                         "xs": 12,
                         "sm": 12,
                         "md": 6,
-                        "lg": 4,
-                        "xl": 4,
+                        "lg": 6,
+                        "xl": 6,
                         "label": "SoC-Minimum",
                         "help": "Desired value for Minimum SoC of connected RCT-Battery in percent (7-90; default 7)",
                         "default": 7
@@ -115,9 +115,9 @@
                         "xs": 12,
                         "sm": 12,
                         "md": 6,
-                        "lg": 4,
-                        "xl": 4,
-                        "label": "SoC-Minimum",
+                        "lg": 6,
+                        "xl": 6,
+                        "label": "SoC-Maximum",
                         "help": "Desired value for Maximum SoC of connected RCT-Battery in percent (30-100; default 97)",
                         "default": 97
                     },
