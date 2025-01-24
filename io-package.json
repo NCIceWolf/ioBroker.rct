@@ -138,7 +138,7 @@
     "extIcon": "https://raw.githubusercontent.com/aruttkamp/ioBroker.rct/main/admin/rct-logo.square.png",
     "readme": "https://github.com/aruttkamp/ioBroker.rct/blob/main/README.md",
     "loglevel": "info",
-    "tier": 3,
+    "tier": 2,
     "mode": "daemon",
     "type": "energy",
     "compact": true,
