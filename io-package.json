@@ -146,7 +146,6 @@
     "dataSource": "poll",
     "adminUI": {
       "config": "json",
-      "tab": "materialize",
       "singleton": true,
       "custom": "none"
     },
