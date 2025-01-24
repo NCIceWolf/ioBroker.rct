@@ -145,7 +145,10 @@
     "connectionType": "local",
     "dataSource": "poll",
     "adminUI": {
-      "config": "json"
+      "config": "json",
+      "tab": "materialize",
+      "singleton": true,
+      "custom": "none"
     },
     "dependencies": [
       {
