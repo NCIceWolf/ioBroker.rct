@@ -1,9 +1,11 @@
 {
     "type": "panel",
+    "label": "StandardPanel",
     "items": {
         "_Headline1": {
             "newLine": true,
             "type": "header",
+            "label": "Headline1",
             "text": "General Settings",
             "size": 1,
             "xs": 12,
@@ -15,12 +17,14 @@
         "dividerHdr": {
             "newLine": true,
             "type": "header",
+            "label": "divider",
             "text": "",
             "size": 2
         },
         "rct_ip": {
             "newLine": true,
             "type": "text",
+            "label": "IP-Address",
             "xs": 12,
             "sm": 12,
             "md": 6,
@@ -31,6 +35,7 @@
         },
         "rct_refresh": {
             "type": "number",
+            "label": "Refresh",
             "min": 10,
             "max": 3600,
             "xs": 12,
@@ -44,11 +49,12 @@
         "rct_elements": {
             "newLine": true,
             "type": "text",
+            "label": "Elements",
             "xs": 12,
             "sm": 12,
             "md": 12,
-            "lg": 8,
-            "xl": 8,
+            "lg": 10,
+            "xl": 10,
             "label": "Elements",
             "help": "Elements to be fetched from inverter (leave blank for standard)"
         }
