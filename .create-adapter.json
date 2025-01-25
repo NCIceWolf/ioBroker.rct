@@ -18,7 +18,7 @@
 	"dataSource": "poll",
 	"connectionIndicator": "no",
 	"language": "JavaScript",
-	"adminReact": "no",
+	"adminReact": "yes",
 	"tools": [
 		"ESLint",
 		"type checking",
@@ -34,6 +34,6 @@
 	"gitCommit": "no",
 	"license": "MIT License",
 	"ci": "gh-actions",
-	"dependabot": "no",
+	"dependabot": "yes",
 	"creatorVersion": "1.33.0"
 }
